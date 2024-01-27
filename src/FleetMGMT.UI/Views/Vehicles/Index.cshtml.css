@@ -1,0 +1,25 @@
+.text-centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.custom-actions a {
+  text-decoration: none;
+}
+
+.custom-actions a:link {
+  text-decoration: none;
+}
+
+.custom-actions a:visited {
+  text-decoration: none;
+}
+
+.custom-actions a:hover {
+  text-decoration: none;
+}
+
+.custom-actions a:active {
+  text-decoration: none;
+}

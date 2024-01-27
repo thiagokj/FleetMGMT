@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetMGMT.Core", "FleetMGMT.Core\FleetMGMT.Core.csproj", "{B9E3F030-AB16-4CBC-8DD2-E2E43D41CB9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetMGMT.Infra", "FleetMGMT.Infra\FleetMGMT.Infra.csproj", "{6FF512B4-A5CA-49C3-BFEA-B63AE74CBCC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetMGMT.Api", "FleetMGMT.Api\FleetMGMT.Api.csproj", "{CA747218-0194-4755-8BE8-012AA3E2EC91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FleetMGMT.UI", "FleetMGMT.UI\FleetMGMT.UI.csproj", "{4ADA3723-026F-4178-8EA7-328877E9F3F1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B9E3F030-AB16-4CBC-8DD2-E2E43D41CB9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9E3F030-AB16-4CBC-8DD2-E2E43D41CB9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9E3F030-AB16-4CBC-8DD2-E2E43D41CB9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9E3F030-AB16-4CBC-8DD2-E2E43D41CB9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FF512B4-A5CA-49C3-BFEA-B63AE74CBCC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FF512B4-A5CA-49C3-BFEA-B63AE74CBCC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FF512B4-A5CA-49C3-BFEA-B63AE74CBCC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FF512B4-A5CA-49C3-BFEA-B63AE74CBCC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA747218-0194-4755-8BE8-012AA3E2EC91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA747218-0194-4755-8BE8-012AA3E2EC91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA747218-0194-4755-8BE8-012AA3E2EC91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA747218-0194-4755-8BE8-012AA3E2EC91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ADA3723-026F-4178-8EA7-328877E9F3F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ADA3723-026F-4178-8EA7-328877E9F3F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ADA3723-026F-4178-8EA7-328877E9F3F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ADA3723-026F-4178-8EA7-328877E9F3F1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

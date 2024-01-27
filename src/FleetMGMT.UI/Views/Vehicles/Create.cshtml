@@ -1,0 +1,50 @@
+@model VehicleViewModel
+@{
+  ViewData["Title"] = "Nova Locação";
+}
+
+@if (Model != null)
+{
+  <div class="text-center">
+
+    <h1 class="display-4">Nova locação</h1>
+
+    <form class="form" method="post" asp-action="Create">
+      <div class="mb-3">
+        <label for="Name">Veículo</label>
+        <input type="text" class="form-control" asp-for="Name">
+      </div>
+
+      <div class="mb-3">
+        <label for="Brand">Marca</label>
+        <input type="text" class="form-control" asp-for="Brand">
+      </div>
+
+      <div class="mb-3">
+        <label for="MarketPrice">Valor de Mercado</label>
+        <input type="text" class="form-control" asp-for="MarketPrice">
+      </div>
+
+      <div class="mb-3">
+        <label for="LeaseStart">Início locação</label>
+        <input type="date" class="form-control" asp-for="LeaseStart">
+      </div>
+
+      <div class="mb-3">
+        <label for="LeaseEnd">Fim locação</label>
+        <input type="date" class="form-control" asp-for="LeaseEnd">
+      </div>
+
+      <div class="mb-3">
+        <label for="Renter">Locatário</label>
+        <input type="text" class="form-control" asp-for="Renter">
+      </div>
+
+      <button class="btn btn-primary">Salvar</button>
+    </form>
+  </div>
+}
+else
+{
+  <p>O modelo não foi inicializado.</p>
+}

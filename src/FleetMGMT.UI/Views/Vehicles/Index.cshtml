@@ -1,0 +1,121 @@
+@{
+  ViewData["Title"] = "Gestão de Frota";
+}
+
+<div class="text-center">
+  <div>
+    <h1 class="display-4">Gestão de Frota</h1>
+    <a href="/Vehicles/Create" class="btn btn-primary">Novo</a>
+  </div>
+</div>
+
+@if (Model != null)
+{
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Veículo</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Valor de Mercado</th>
+          <th scope="col">Início locação</th>
+          <th scope="col">Fim locação</th>
+          <th scope="col">Locatário</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        @{
+          int rowId = 1;
+          foreach (var vehicle in Model)
+          {
+            <tr>
+              <td><a asp-action="Details" asp-route-id="@vehicle.Id">@rowId</a></td>
+              <td>@vehicle.Name</td>
+              <td>@vehicle.Brand</td>
+              <td>@vehicle.MarketPrice.ToString("C")</td>
+              <td>@vehicle.LeaseStart.ToString("dd/MM/yyyy")</td>
+              <td>@vehicle.LeaseEnd.ToString("dd/MM/yyyy")</td>
+              <td>@vehicle.Renter.ToUpper()</td>
+              <td class="custom-actions">
+                <a asp-action="Edit" asp-route-id="@vehicle.Id" style="text-decoration: none;" title="Editar">
+                  📋
+                </a>
+                <a href="#" class="delete-link" data-toggle="modal" data-target="#deleteModal" data-vehicle-id="@vehicle.Id"
+                  title="Excluir">
+                  ❌
+                </a>
+              </td>
+            </tr>
+            rowId++;
+          }
+        }
+      </tbody>
+    </table>
+  </div>
+}
+else
+{
+  <p>Não há dados para exibição</p>
+}
+
+<!-- Modal de Confirmação de Exclusão -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title text-centered" id="deleteModalLabel">Confirmação de Exclusão</h5>
+        <button type="button" class="btn btn-secondary close-modal ml-auto" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true" id="btn-close-x">x</span>
+        </button>
+      </div>
+
+      <div class="modal-body text-center">
+        Realmente quer excluir este registro?
+        <input type="hidden" id="vehicleId" />
+      </div>
+
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary close-modal" data-dismiss="modal" id="cancelDelete">
+          Cancelar
+        </button>
+        <button type="button" class="btn btn-danger" id="confirmDelete">
+          Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    $('.delete-link').click(function (e) {
+      e.preventDefault();
+      var vehicleId = $(this).data('vehicle-id');
+      var modal = $('#deleteModal');
+      modal.find('#vehicleId').val(vehicleId);
+      modal.modal('show');
+    });
+
+    $('#confirmDelete').click(function () {
+      var vehicleId = $('#vehicleId').val();
+      $.ajax({
+        url: '/Vehicles/Delete/' + vehicleId,
+        type: 'DELETE',
+        success: function () {
+          location.reload();
+        }
+      });
+    });
+
+    $('.close-modal').click(function () {
+      $('#deleteModal').modal('hide');
+    });
+  });
+</script>

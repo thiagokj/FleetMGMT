@@ -1,0 +1,56 @@
+@{
+  ViewData["Title"] = "Detalhes Locação";
+}
+
+@if (Model != null)
+{
+  <div class="text-center">
+
+    <h1 class="display-4">Detalhes da Locação</h1>
+
+    <form>
+      <div class="mb-3">
+        <label for="Id">ID</label>
+        <input type="text" class="form-control" id="Id" value="@Model.Id" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="Name">Veículo</label>
+        <input type="text" class="form-control" id="Name" value="@Model.Name" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="Brand">Marca</label>
+        <input type="text" class="form-control" id="Brand" value="@Model.Brand" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="MarketPrice">Valor de Mercado</label>
+        <input type="text" class="form-control" id="MarketPrice" value="@Model.MarketPrice.ToString("C")" readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="LeaseStart">Início locação</label>
+        <input type="date" class="form-control" id="LeaseStart" value="@Model.LeaseStart.ToString("yyyy-MM-dd")"
+               readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="LeaseEnd">Fim locação</label>
+        <input type="date" class="form-control" id="LeaseEnd" value="@Model.LeaseEnd.ToString("yyyy-MM-dd")"
+               readonly>
+      </div>
+
+      <div class="mb-3">
+        <label for="Renter">Locatário</label>
+        <input type="text" class="form-control" id="Renter" value="@Model.Renter.ToUpper()" readonly>
+      </div>
+
+      <a href="/Vehicles" class="btn btn-primary">Voltar</a>
+    </form>
+  </div>
+}
+else
+{
+  <p>O modelo não foi inicializado.</p>
+}
