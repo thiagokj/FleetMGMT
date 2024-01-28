@@ -1058,6 +1058,8 @@ Exemplo de tela principal(Views -> Home -> Index.cshtml):
 
 ![IndexDemoUI][IndexDemoUI]
 
+### Espero que esse template possa ser útil e ajude em futuros códigos! 👍
+
 <!-- Links -->
 
 [FleetMGMTv1]: assets/img/FleetMGMTv1.png
