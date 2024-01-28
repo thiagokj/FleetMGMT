@@ -1,7 +1,7 @@
 using FleetMGMT.UI.Contexts.VehicleContext.UseCases.CRUD;
 
 namespace FleetMGMT.UI.Extensions;
-public static class BuilderExtensions
+public static class BuilderExtension
 {
   public static void AddConfiguration(this WebApplicationBuilder builder)
   {

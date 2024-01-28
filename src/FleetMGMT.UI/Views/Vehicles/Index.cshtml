@@ -34,7 +34,9 @@
               <td><a asp-action="Details" asp-route-id="@vehicle.Id">@rowId</a></td>
               <td>@vehicle.Name</td>
               <td>@vehicle.Brand</td>
-              <td>@vehicle.MarketPrice.ToString("C")</td>
+              <td>
+                @vehicle.MarketPrice.ToString("C", new System.Globalization.CultureInfo("pt-BR"))
+              </td>
               <td>@vehicle.LeaseStart.ToString("dd/MM/yyyy")</td>
               <td>@vehicle.LeaseEnd.ToString("dd/MM/yyyy")</td>
               <td>@vehicle.Renter.ToUpper()</td>
