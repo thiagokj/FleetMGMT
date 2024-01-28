@@ -185,7 +185,7 @@ public class Vehicle : Entity
 }
 ```
 
-Interface para definir os métodos para interagir com o veículo
+Interface para definir os métodos para interagir com o veículo.
 
 ```csharp
 namespace FleetMGMT.Core.Contexts.VehicleContext.Entities.Contracts;
@@ -210,7 +210,7 @@ dotnet add package Microsoft.Data.SqlClient
 dotnet add package Dapper
 ```
 
-Configure contexto para acesso ao banco de dados
+Configure o contexto para acesso ao banco de dados.
 
 ```csharp
 using System.Data;
@@ -453,14 +453,14 @@ app.Run();
 
 ## Documentando a API
 
-Adicione os pacotes ao projeto da API
+Adicione os pacotes da OpenAPI ao projeto da API.
 
 ```csharp
 dotnet add package Microsoft.AspNetCore.OpenApi
 dotnet add package Swashbuckle.AspNetCore
 ```
 
-Habilite a documentação com notação de XML ao csproj
+Habilite a documentação com notação de XML ao csproj.
 
 ```xml
 <PropertyGroup>
@@ -469,7 +469,7 @@ Habilite a documentação com notação de XML ao csproj
 </PropertyGroup>
 ```
 
-Crie um método no BuilderExtension para adicionar o Swagger
+Crie um método no BuilderExtension para adicionar o Swagger.
 
 ```csharp
 public static void AddSwagger(this WebApplicationBuilder builder)
@@ -490,7 +490,7 @@ public static void AddSwagger(this WebApplicationBuilder builder)
 }
 ```
 
-Atribua a cada rota a respectiva documentação com anotações
+Atribua a cada rota a respectiva documentação com anotações.
 
 ```csharp
 using FleetMGMT.Core.Contexts.VehicleContext.Entities;
@@ -512,7 +512,7 @@ public class VehicleController(IRepository repository) : ControllerBase
 }
 ```
 
-Atualize a inicialização do App
+Atualize a inicialização do App.
 
 ```csharp
 using FleetMGMT.Api.Extensions;
@@ -531,6 +531,10 @@ app.UseSwaggerUI();
 
 app.Run();
 ```
+
+Exemplo da documentação:
+
+![SwaggerDemo][SwaggerDemo]
 
 ## UI - Interface do Usuário
 
@@ -551,12 +555,12 @@ namespace FleetMGMT.UI
 }
 ```
 
-Defina a Url no AppSettings.json
+Defina a Url no AppSettings.json.
 
 ```json
 {
   "Secrets": {
-    "ApiBaseUrl": "http://url-para-acessar-a-api"
+    "ApiBaseUrl": "https://url-para-acessar-a-api"
   },
   "Logging": {
     "LogLevel": {
@@ -568,7 +572,7 @@ Defina a Url no AppSettings.json
 }
 ```
 
-Agora crie um BuilderExtension para adicionar essa configuração ao executar o App
+Agora crie um BuilderExtension para adicionar essa configuração ao executar a aplicação Web.
 
 ```csharp
 using FleetMGMT.UI.Contexts.VehicleContext.UseCases.CRUD;
@@ -590,7 +594,7 @@ public static class BuilderExtension
 Seguindo a organização similar a API, crie contextos para as ViewModels e Controllers.
 Obs: Por convenção, as paginas devem ficar dentro da estrutura de arquivos, na pasta Views.
 
-Criando a ViewModel. A ViewModel é pode ser diferente da model do projeto Core, pois nem todos os campos são necessários para exibição em tela. Assim temos flexibilidade para representar os dados para o usuário.
+Criando a ViewModel. A ViewModel pode ser diferente da model do projeto Core, pois nem todos os campos são necessários para exibição em tela. Assim temos flexibilidade para representar os dados para o usuário final.
 
 ```csharp
 namespace FleetMGMT.UI.Contexts.VehicleContext.Models;
@@ -961,7 +965,7 @@ else
 }
 ```
 
-E agora atualize a navegação alterando a pagina Views -> Shared -> \_Layout.cshtml
+Atualize a navegação alterando a pagina Views -> Shared -> \_Layout.cshtml
 
 ```csharp
 <!DOCTYPE html>
@@ -1029,6 +1033,7 @@ E agora atualize a navegação alterando a pagina Views -> Shared -> \_Layout.cs
 Para subir a aplicação, configure a inicialização e realize testes.
 
 ```csharp
+// Program.cs
 using FleetMGMT.UI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -1049,6 +1054,10 @@ app.MapControllerRoute(
 app.Run();
 ```
 
+Exemplo de tela principal(Views -> Home -> Index.cshtml):
+
+![IndexDemoUI][IndexDemoUI]
+
 <!-- Links -->
 
 [FleetMGMTv1]: assets/img/FleetMGMTv1.png
@@ -1058,3 +1067,5 @@ app.Run();
 [Azure]: https://azure.microsoft.com/pt-br/products/app-service
 [SqlScripts]: assets/sql/
 [AzureConnectionString]: https://learn.microsoft.com/en-us/azure/app-service/configure-common?tabs=portal#configure-connection-strings
+[SwaggerDemo]: assets/img/Swagger-demo.png
+[IndexDemoUI]: assets/img/IndexUI-Demo.png
