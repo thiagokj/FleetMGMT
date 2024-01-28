@@ -1054,9 +1054,11 @@ app.MapControllerRoute(
 app.Run();
 ```
 
-Exemplo de tela principal(Views -> Home -> Index.cshtml):
+Exemplo de tela principal (Views -> Home -> Index.cshtml):
 
 ![IndexDemoUI][IndexDemoUI]
+
+### Espero que esse template possa ser útil e ajude em futuros códigos! 👍
 
 <!-- Links -->
 
